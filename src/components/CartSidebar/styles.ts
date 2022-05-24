@@ -7,7 +7,7 @@ export const Overlay = styled.div`
   right: 0;
   bottom: 0;
   left: 0;
-  background: rgba(253, 114, 114, 0.31);
+  background: rgba(10, 69, 101, 0.61);
 `
 
 export const Sidebar = styled.div`
@@ -18,7 +18,7 @@ export const Sidebar = styled.div`
   width: 440px;
   height: 100vh;
   background: #fff5f5;
-  box-shadow: -24px 0px 40px #f4abab;
+  box-shadow: -24px 0px 40px #4b758c;
   padding: 30px;
 
   display: flex;
