@@ -6,11 +6,5 @@ interface IProductList {
 }
 
 export const ProductList = ({ products }: IProductList): JSX.Element => {
-  return (
-    <ProductsContainer>
-      {products.map(product => (
-        <ProductCard key={product.id} product={product} />
-      ))}
-    </ProductsContainer>
-  )
+  return <ProductsContainer>{/* <ProductCard /> */}</ProductsContainer>
 }

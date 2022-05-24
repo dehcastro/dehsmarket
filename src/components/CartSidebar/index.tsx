@@ -14,7 +14,7 @@ import {
 export const CartSidebar = (): JSX.Element => {
   return (
     <>
-      <Sidebar data-testid="sidebar">
+      <Sidebar>
         <Header>
           <CloseButton>
             <FiX size={26} color="#fd7272" />

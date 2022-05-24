@@ -24,13 +24,13 @@ export const ProductAddedToCart = ({ product }: IProductCart): JSX.Element => {
     <>
       <Container>
         <ImageContainer>
-          <ProductImage src={product.imageUrl} alt="" />
+          <ProductImage src="" alt="" />
         </ImageContainer>
 
         <ProductDetails>
-          <Title>{product.title}</Title>
+          <Title></Title>
           <Price>
-            ${product.price} <Unit>/kg</Unit>
+            $ <Unit>/kg</Unit>
           </Price>
         </ProductDetails>
 
@@ -39,7 +39,7 @@ export const ProductAddedToCart = ({ product }: IProductCart): JSX.Element => {
             <FiMinus size={22} color="#fff" />
           </MinusButton>
 
-          <Quantity>{product.quantity}</Quantity>
+          <Quantity></Quantity>
 
           <PlusButton>
             <FiPlus size={22} color="#fff" />

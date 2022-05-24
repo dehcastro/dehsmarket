@@ -17,13 +17,9 @@ interface IProductProps {
 
 export const ProductCard = ({ product }: IProductProps): JSX.Element => {
   return (
-    <Container data-testid="product-card">
+    <Container>
       <ImageContainer>
-        <ProductImage
-          src={product.imageUrl}
-          alt=""
-          data-testid="product-image"
-        />
+        <ProductImage src="" alt="" />
       </ImageContainer>
 
       <ProductDetails>
