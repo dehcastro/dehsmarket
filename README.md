@@ -9,6 +9,7 @@
 - [Purpose](#purpose)
 - [Installation](#installation)
 - [Content](#content)
+- [Global Types](#global-types)
 - [Using MirageJS](#using-miragejs)
 - [Tests Suggestions](#tests-suggestions)
 - [Techs and Libs](#techs-and-libs)
@@ -46,6 +47,20 @@ Feel free to improve and include more complexity. Here's the figma link: https:/
 <img src="material/main.png" alt="dehsmarket main page">
 <img src="material/sidebar.png" alt="dehsmarket main page with sidebar open">
 <img src="material/components_guidelines.png" alt="guidelines and components">
+
+# Global Types
+
+```typescript
+// src/types/product.d.tsx
+
+interface IProduct {
+  id: string
+  title: string
+  price: string
+  imageUrl: string
+  quantity: number
+}
+```
 
 # Using MirageJS
 
