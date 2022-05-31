@@ -13,13 +13,59 @@ const CartContext = createContext<ICartContextData>({} as ICartContextData)
 const CartProvider: React.FC = ({ children }) => {
   const [products, setProducts] = useState<IProduct[]>([])
 
-  const addProduct = useCallback(() => {}, [])
+  const addProduct = useCallback(
+    (product: IProduct) => {
+      const productAlreadyExists = products.includes(product)
 
-  const removeProduct = useCallback(() => {}, [])
+      if (!productAlreadyExists)
+        setProducts(previousProducts => [...previousProducts, product])
+    },
+    [products]
+  )
 
-  const increaseQuantity = useCallback(() => {}, [])
+  const removeProduct = useCallback(
+    (product: IProduct) => {
+      setProducts([
+        ...products.filter(currentProduct => currentProduct.id !== product.id)
+      ])
+    },
+    [products]
+  )
 
-  const decreaseQuantity = useCallback(() => {}, [])
+  const increaseQuantity = useCallback(
+    (product: IProduct) => {
+      const newProducts = products.map(currentProduct => {
+        return currentProduct.id === product.id
+          ? {
+              ...currentProduct,
+              quantity: currentProduct.quantity + 1
+            }
+          : currentProduct
+      })
+
+      setProducts(newProducts)
+    },
+    [products]
+  )
+
+  const decreaseQuantity = useCallback(
+    (product: IProduct) => {
+      const newProducts = products.map(currentProduct => {
+        return currentProduct.id === product.id
+          ? {
+              ...currentProduct,
+              quantity:
+                currentProduct.quantity > 1
+                  ? currentProduct.quantity - 1
+                  : currentProduct.quantity
+            }
+          : currentProduct
+      })
+
+      setProducts(newProducts)
+    },
+    [products]
+  )
 
   return (
     <CartContext.Provider
